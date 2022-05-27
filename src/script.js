@@ -10,11 +10,16 @@ const name = document.getElementById('name');
 
 const gltfLoader = new GLTFLoader()
 // Debug
-const gui = new dat.GUI()
+// const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
+const canvas2 = document.querySelector('canvas.ballgl')
 
+// loader
+const textureLoader = new THREE.TextureLoader()
+
+const normalTexture = textureLoader.load("/textures/nine.png")
 // Scene
 const scene = new THREE.Scene()
 
@@ -122,6 +127,75 @@ scene.add(pointLight3);
 // scene.add(pointHelper3);
 
 
+// SECOND OBJECT
+
+// const geometry = new THREE.SphereBufferGeometry(.5, 64, 64)
+
+// // Materials
+
+// const material = new THREE.MeshStandardMaterial()
+// material.metalness = 0.7;
+// material.roughness = 0.2;
+// material.normalMap = normalTexture;
+// material.color = new THREE.Color(0xffffff)
+
+// // Mesh
+// const sphere = new THREE.Mesh(geometry,material)
+// scene.add(sphere)
+
+// // Lights
+
+// // light 1
+// const point2Light = new THREE.PointLight(0xffffff, 0.1)
+// pointLight.position.x = 2
+// pointLight.position.y = 3
+// pointLight.position.z = 4
+// scene.add(point2Light)
+
+
+// // light 2
+// const point2Light2 = new THREE.PointLight(0xff0000, 2);
+// pointLight2.position.set(-1, 0.7, -0.3);
+// pointLight2.intensity = 1.8;
+// scene.add(point2Light2);
+// // folder to organize the orbit controls
+// const light1 = gui.addFolder("Light 1")
+// const light2 = gui.addFolder("Light 2");
+// const object = gui.addFolder("object");
+
+// object.add(sphere.position, 'y').min(-3).max(3).step(0.1);
+// object.add(sphere.position, 'x').min(-6).max(6).step(0.1);
+// object.add(sphere.position, 'z').min(-3).max(3).step(0.1);
+
+// light1.add(pointLight2.position, 'y').min(-3).max(3).step(0.1);
+// light1.add(pointLight2.position, 'x').min(-6).max(6).step(0.1);
+// light1.add(pointLight2.position, 'z').min(-3).max(3).step(0.1);
+// light1.add(pointLight2, 'intensity').min(0).max(10).step(0.1);
+
+// const pointLightHelper = new THREE.PointLightHelper(pointLight2, 1);
+// scene.add(pointLightHelper);
+
+// // light 3
+// const point2Light3 = new THREE.PointLight(0xe1ff, 2);
+// pointLight3.position.set(1.5, -1.5, -0.9);
+// pointLight3.intensity = 1.8;
+// scene.add(point2Light3);
+
+// light2.add(point2Light3.position, 'y').min(-3).max(3).step(0.1);
+// light2.add(point2Light3.position, 'x').min(-6).max(6).step(0.1);
+// light2.add(point2Light3.position, 'z').min(-3).max(3).step(0.1);
+// light2.add(point2Light3, 'intensity').min(0).max(10).step(0.1);
+
+// const light2Color = {
+//     color: 0xff0000
+// }
+// light2.addColor(light2Color, 'color')
+//     .onChange(()=>{
+//         point2Light3.color.set(light2Color.color)
+//     })
+
+// const pointLightHelper2 = new THREE.PointLightHelper(point2Light3, 1);
+// scene.add(pointLightHelper2);
 /**
  * Sizes
  */
